@@ -22,4 +22,11 @@ AppSettings.prototype.get = function (keyArray, successCallback, errorCallback) 
     exec(successCallback, errorCallback, "AppSettings", "get", keyArray);
 };
 
-module.exports = new AppSettings();
+if(!window.plugins)
+    window.plugins = {};
+
+if (!window.plugins.AppSettings)
+    window.plugins.AppSettings = new AppSettings();
+
+if (typeof module != 'undefined' && module.exports)
+    module.exports = AppSettings;
