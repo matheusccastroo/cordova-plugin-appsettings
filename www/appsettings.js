@@ -29,4 +29,4 @@ if (!window.plugins.AppSettings)
     window.plugins.AppSettings = new AppSettings();
 
 if (typeof module != 'undefined' && module.exports)
-    module.exports = AppSettings;
+    module.exports = new AppSettings();
